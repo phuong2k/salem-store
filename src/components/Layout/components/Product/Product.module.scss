@@ -1,0 +1,19 @@
+.product {
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 3%;
+    .row {
+        display: grid;
+        column-gap: 2px;
+        row-gap: 5px;
+        grid-template-columns: auto auto auto auto;
+        .col {
+            border-radius: 2px;
+            height: 340px;
+            width: 260px;
+            font-size: 1.4rem;
+            text-align: center;
+            border: 3px solid var(--background-container-color);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0); /*thuộc tính nở ra*/
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.wrapper {
+    margin: auto;
+
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    .topSearch {
+        font-size: 1.4rem !important;
+        padding: 3px 6px;
+
+        border-radius: 14px;
+        cursor: pointer;
+    }
+    :hover {
+        color: var(--primary);
+    }
+
+    .active {
+        font-size: 1.4rem !important;
+        height: 18%;
+        width: 22%;
+        padding: 3px 6px;
+        height: 18%;
+        width: 22%;
+        border-radius: 14px;
+        background-color: var(--text-color);
+        color: white;
+        animation: headerNotifyGrowth ease-in 0.25s;
+    }
+}
