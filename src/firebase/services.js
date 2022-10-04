@@ -6,7 +6,20 @@ export const addDocument = async (collections, data) => {
     await setDoc(newCityRef, { ...data, createdAt: serverTimestamp() });
 };
 
-//tao keywords cho displayName, su dung cho search
+// basic search
+export const generateKeyword = (displayName) => {
+    const arrName = [];
+    let curName = '';
+    displayName.split('').forEach((letter) => {
+        curName += letter;
+        arrName.push(curName);
+    });
+    return arrName;
+};
+
+// console.log(generateKeyword('ao khoac ni'));
+
+//advanced search
 export const generateKeywords = (displayName) => {
     // liet ke tat cac hoan vi. vd: name = ["David", "Van", "Teo"]
     // => ["David", "Van", "Teo"], ["David", "Teo", "Van"], ["Teo", "David", "Van"],...

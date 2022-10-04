@@ -660,8 +660,6 @@ const products = [
         date: '04/18/2022',
         sold: 122,
     },
-
-    // 18 products
 ];
 
 const getAllProducts = () => products;

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Header.module.scss';
 import classNames from 'classnames/bind';
-import { Input } from 'antd';
-import { SearchOutlined, CloseOutlined, BellOutlined } from '@ant-design/icons';
+import { BellOutlined } from '@ant-design/icons';
 import styles from '../Header/Header.module.scss';
 import { logo, flagvn, flagen } from '../../../../assets/Images/header-img';
 import Login from '../../components/Login';
@@ -11,18 +10,11 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../../../../Context/AppProvider';
 import { AuthContext } from '../../../../Context/AuthProvider';
 import Promotion from '../Promotion';
-import Topsearch from '../Topsearch';
+import Search from '../Search';
 const cx = classNames.bind(styles);
 
 export default function Header() {
     const { handleLanguage, headerLanguage, flag } = React.useContext(AppContext);
-    const [value, setValue] = useState('');
-    const handleDelete = () => {
-        setValue('');
-    };
-    const handleInputChange = (e) => {
-        setValue(e.target.value);
-    };
 
     const { showLogin } = React.useContext(AuthContext);
 
@@ -88,26 +80,7 @@ export default function Header() {
                         </div>
                         <div className={cx('user')}>{showLogin ? <Login /> : <User />}</div>
                     </div>
-                    <div className={cx('search')}>
-                        <h1>Salem-Store Search</h1>
-                        <div className={cx('search-container')}>
-                            <div className={cx('search-input')}>
-                                <Input
-                                    value={value}
-                                    type="text"
-                                    placeholder={headerLanguage[0].searchInput}
-                                    onChange={handleInputChange}
-                                />
-                                <div className={cx('delete')}>
-                                    <CloseOutlined onClick={() => handleDelete()} />
-                                </div>
-                                <Topsearch />
-                            </div>
-                            <div className={cx('search-icon')}>
-                                <SearchOutlined className={cx('searchOutlined')} />
-                            </div>
-                        </div>
-                    </div>
+                    <Search />
                 </div>
             </div>
         </div>

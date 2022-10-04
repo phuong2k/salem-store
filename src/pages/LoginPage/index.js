@@ -10,7 +10,7 @@ import policy from '../../assets/fakedata/policy';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/config';
 import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { addDocument, generateKeywords } from '../../firebase/services';
+import { addDocument, generateKeyword } from '../../firebase/services';
 import { getAdditionalUserInfo } from 'firebase/auth';
 const cx = classNames.bind(styles);
 
@@ -23,32 +23,32 @@ export default function LoginPage() {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const details = getAdditionalUserInfo(result);
-                products.map((e) => {
-                    console.log(e.id);
-                    addDocument('products', {
-                        id: e.id,
-                        title: e.title,
-                        day: e.day,
-                        price: e.price,
-                        image01: e.image01,
-                        image02: e.image02,
-                        image03: e.image03,
-                        categorySlug: e.categorySlug,
-                        colors: e.colors,
-                        slug: e.slug,
-                        size: e.size,
-                        decription: e.decription,
-                        color_info: e.color_info,
-                        size_info: e.size_info,
-                        material: e.material,
-                        form: e.form,
-                        origin: e.origin,
-                        render: e.render,
-                        date: e.date,
-                        sold: e.sold,
-                        keyWord: generateKeywords(e.displayName?.toLowerCase()),
-                    });
-                });
+                // products.map((e) => {
+                //     console.log(e.id);
+                //     addDocument('products', {
+                //         id: e.id,
+                //         title: e.title,
+                //         day: e.day,
+                //         price: e.price,
+                //         image01: e.image01,
+                //         image02: e.image02,
+                //         image03: e.image03,
+                //         categorySlug: e.categorySlug,
+                //         colors: e.colors,
+                //         slug: e.slug,
+                //         size: e.size,
+                //         decription: e.decription,
+                //         color_info: e.color_info,
+                //         size_info: e.size_info,
+                //         material: e.material,
+                //         form: e.form,
+                //         origin: e.origin,
+                //         render: e.render,
+                //         date: e.date,
+                //         sold: e.sold,
+                //         keyWord: generateKeyword(e.title?.toLowerCase()),
+                //     });
+                // });
                 if (details?.isNewUser) {
                     console.log('oke');
                     addDocument('users', {
