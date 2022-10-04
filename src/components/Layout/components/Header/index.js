@@ -26,9 +26,11 @@ export default function Header() {
                     <div className={cx('nav')}>
                         <div className={cx('nav-container')}>
                             <div className={cx('logo')}>
-                                <img src={logo} alt="logo" />
+                                <Link to={'/salem-store'}>
+                                    <img src={logo} alt="logo" />
+                                </Link>
                             </div>
-                            <Link to={'/'}>
+                            <Link to={'/salem-store'}>
                                 <span>{headerLanguage[0].home}</span>
                             </Link>
                             <Link to={'/introduce'}>
