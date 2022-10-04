@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/salem-store/static/css/main.c6e52221.css",
-    "main.js": "/salem-store/static/js/main.456023b3.js",
+    "main.js": "/salem-store/static/js/main.96b495f7.js",
     "static/js/27.0de0ce78.chunk.js": "/salem-store/static/js/27.0de0ce78.chunk.js",
     "static/media/boxicons.svg": "/salem-store/static/media/boxicons.045b05bf2dc119267a90.svg",
     "static/media/slide4.jpeg": "/salem-store/static/media/slide4.f3a15786c79d3df8d102.jpeg",
@@ -89,6 +89,6 @@
   },
   "entrypoints": [
     "static/css/main.c6e52221.css",
-    "static/js/main.456023b3.js"
+    "static/js/main.96b495f7.js"
   ]
 }
